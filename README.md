@@ -7,7 +7,7 @@
 
 ### **1. Enter the Environment**
 1.  **Click this link:** [https://kubeflow.89.169.115.198.sslip.io/](https://kubeflow.89.169.115.198.sslip.io/)
-2.  If asked to log in, use the credentials provided by the instructor (Default: `user@example.com` / `12341234`).
+2.  If asked to log in, use the credentials provided 
 3.  Look for the notebook named **`workshop`** in the list.
 4.  Click the blue **CONNECT** button on the right side.
 5.  This will open **JupyterLab** in a new tab.
