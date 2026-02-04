@@ -3,21 +3,27 @@
 
 ---
 
-## **Step 0: Getting Started (Read This First)**
+## **Step 0: Getting Started**
 
-### **1. How to create a new Notebook**
-*   **If you are using JupyterLab (Kubeflow/Cloud):**
-    1.  Look for the **Launcher** tab (the big blue buttons).
-    2.  Under the "Notebook" section, click the big square button that says **Python 3**.
-    3.  A new file named `Untitled.ipynb` will open.
-    4.  (Optional) Right-click the tab name to rename it to `MyWorkshop.ipynb`.
+### **1. Enter the Environment**
+1.  You should see the **deployKF Dashboard** (Dark blue sidebar).
+2.  Look for the notebook named **`workshop`** in the list.
+3.  Click the blue **CONNECT** button on the right side.
+4.  This will open **JupyterLab** in a new tab.
 
-*   **If you are using Classic Jupyter:**
-    1.  Click the **New** button in the top right corner.
-    2.  Select **Python 3**.
+### **2. Navigate to the Workshop Folder**
+*Look at the file browser on the **left** side of the screen.*
+1.  Double-click the folder named **`workshop`**.
+2.  Inside that, double-click the folder named **`materials`**.
+    *   *Note: You must be inside this folder so the code can find the dataset.*
 
-### **2. How to create and run "Cells"**
-A **"Cell"** is the grey box where you type code.
+### **3. Create your Notebook**
+*Look at the main "Launcher" area on the right.*
+1.  Under the **Notebook** header, click the big square button with the Python logo labeled **Python 3**.
+2.  A new file named `Untitled.ipynb` will open.
+3.  (Optional) Right-click the file name `Untitled.ipynb` in the left sidebar, select **Rename**, and name it `MyModel.ipynb`.
+
+### **4. How to Run Code**
 *   **To create a NEW empty cell:** Click the **`+`** (Plus) icon in the top toolbar.
 *   **To RUN the code:** Click inside the cell to select it, then press **`Shift + Enter`** on your keyboard (or click the **▶** Play button).
 
@@ -70,7 +76,8 @@ try:
     df = pd.read_csv('online_gaming_behavior_dataset.csv')
     print("Data loaded successfully!")
 except FileNotFoundError:
-    print("❌ Error: 'online_gaming_behavior_dataset.csv' not found. Please upload it first.")
+    print("❌ Error: 'online_gaming_behavior_dataset.csv' not found.") 
+    print("👉 Check that you are inside the 'workshop/materials' folder in the sidebar!")
 
 # 2. Visualize: Do frequent sessions actually mean higher engagement?
 custom_order = ['Low', 'Medium', 'High'] 
