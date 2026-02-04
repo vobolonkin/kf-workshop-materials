@@ -244,4 +244,4 @@ print(f"AVERAGE ACCURACY: {cv_scores.mean() * 100:.2f}%")
 ```
 
 ---
-**🎉 Congratulations! You just built and evaluated 3 different AI models.**
+**🎉 Congratulations! You just built and evaluated 2 different AI models.**
