@@ -88,7 +88,9 @@ plt.figure(figsize=(8, 5))
 sns.boxplot(
     data=df, 
     x='EngagementLevel', 
-    y='SessionsPerWeek', 
+    y='SessionsPerWeek',
+    hue='EngagementLevel', # Fixes the warning
+    legend=False,          # Fixes the warning
     order=custom_order, 
     palette='coolwarm'
 )
@@ -185,17 +187,15 @@ plt.show()
 
 ---
 
-## **Step 5: The Neural Network & Stress Test**
+## **Step 5: The Neural Network**
 *What are we doing?*
-1.  **Deep Learning:** We build a small **Neural Network** (simulating a brain) to see if it can beat the Forest.
-2.  **Timing:** We measure how long it takes to train.
-3.  **Cross-Validation:** We take our Random Forest and test it 5 different times on different parts of the data. This proves the result wasn't just luck.
+We build a small **Neural Network** (simulating a brain) to see if it can beat the Forest. We also measure how long it takes to train compared to other models.
 
 **1. Click the `+` button to create a new empty cell.**
 **2. Copy and Paste this code:**
 
 ```python
-print("\n--- PART 4: Neural Network & Stress Test ---")
+print("\n--- PART 4: Neural Network ---")
 
 t0 = time.perf_counter()
 # 1. Train Neural Network (Deep Learning)
@@ -215,9 +215,22 @@ plt.show()
 
 t1 = time.perf_counter()
 print(f"NN Training Time: {t1 - t0:.2f} seconds")
+```
 
-# 2. Cross Validation (The Reality Check)
-print("\nRunning Cross-Validation on Random Forest (Stress Test)...")
+---
+
+## **Step 6: The "Stress Test" (Cross Validation)**
+*What are we doing?*
+We perform **Cross-Validation** on our Random Forest. We divide the data into 5 chunks and run the test 5 separate times. This proves that our high accuracy wasn't just luck (or a "fluke") based on the specific 20% we selected earlier.
+
+**1. Click the `+` button to create a new empty cell.**
+**2. Copy and Paste this code:**
+
+```python
+print("\n--- PART 5: Cross Validation (Stress Test) ---")
+print("Running Cross-Validation on Random Forest...")
+
+# We use the full dataset (X, y) and let the computer split it 5 different ways
 cv_scores = cross_val_score(rf_model, X, y, cv=5)
 
 print(f"Test Run 1: {cv_scores[0]*100:.2f}%")
@@ -225,6 +238,7 @@ print(f"Test Run 2: {cv_scores[1]*100:.2f}%")
 print(f"Test Run 3: {cv_scores[2]*100:.2f}%")
 print(f"Test Run 4: {cv_scores[3]*100:.2f}%")
 print(f"Test Run 5: {cv_scores[4]*100:.2f}%")
+print("-" * 30)
 print(f"AVERAGE ACCURACY: {cv_scores.mean() * 100:.2f}%")
 ```
 
