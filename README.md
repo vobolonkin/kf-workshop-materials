@@ -6,10 +6,11 @@
 ## **Step 0: Getting Started**
 
 ### **1. Enter the Environment**
-1.  You should see the **deployKF Dashboard** (Dark blue sidebar).
-2.  Look for the notebook named **`workshop`** in the list.
-3.  Click the blue **CONNECT** button on the right side.
-4.  This will open **JupyterLab** in a new tab.
+1.  **Click this link:** [https://kubeflow.89.169.115.198.sslip.io/](https://kubeflow.89.169.115.198.sslip.io/)
+2.  If asked to log in, use the credentials provided by the instructor (Default: `user@example.com` / `12341234`).
+3.  Look for the notebook named **`workshop`** in the list.
+4.  Click the blue **CONNECT** button on the right side.
+5.  This will open **JupyterLab** in a new tab.
 
 ### **2. Navigate to the Workshop Folder**
 *Look at the file browser on the **left** side of the screen.*
